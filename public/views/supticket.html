@@ -1,0 +1,45 @@
+<div class="container" class="container app">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-7 col-lg-6">
+
+      <form class="form-vertical" role="form" name="registrForm" ng-submit='support.createTicket()'>
+        <fieldset>
+          <legend>Create a new Ticket</legend>
+
+          <!-- <div class="form-group required">
+            <label for="input-text" class="control-label">Requester</label>
+            <input type="text" class="form-control" id="input-text" placeholder="Search a requester"
+             ng-model = "dashboard.ticketData.requestor">
+          </div> -->
+          <div class="form-group required">
+            <label for="input-money" class="control-label">Subject</label>
+            <input type="text" class="form-control mask-money" id="input-money" placeholder="Subject" ng-model = "support.ticketData.subject">
+          </div>
+          <div class="form-group required">
+            <label for="input-select" class="control-label">Type</label>
+            <select class="form-control" id="input-select" ng-model = "support.ticketData.type" ng-options="x for x in support.types">
+            </select>
+          </div>
+          <div class="form-group required">
+            <label for="input-select" class="control-label">Priority</label>
+            <select class="form-control" id="input-select" ng-model = "dashboard.ticketData.priority" ng-options="x for x in dashboard.priority">
+            </select>
+          </div>
+          <div class="form-group required">
+            <label for="input-money" class="control-label">Description</label>
+              <div text-angular="text-angular" name="htmlcontent" ng-model="support.ticketData.description" 
+              ta-toolbar="[['bold','underline','italics','undo','redo', 'quote','p','pre','ul','ol', 'insertImage','insertLink','unlink']]"></div>
+          </div>
+          <form>
+             <input type="file" id="file1" name="file" multiple
+                ng-files="support.getTheFiles($files)">
+          </form>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" >Save Data</button>
+            <button type="submit" class="btn btn-primary" ng-click='clear()'>Cancel</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div> 

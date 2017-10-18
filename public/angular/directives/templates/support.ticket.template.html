@@ -1,0 +1,50 @@
+<table id="characters-ul" ng-table="support.ticketTable" class="table table-hover table-condensed characters-table" show-filter="true">
+    <tr ng-click="support.goToDetail(data.id)" 
+        ng-repeat="data in $data | filter:{status:(support.status=='ALL' ? data : support.status)} : true | filter:{priority:(support.priority=='ALL' ? data : support.priority)} : true">
+      
+       <td title="'Ticket'" filter="{ticketNum: 'text'}" sortable="'ticketNum'">
+       <p>
+        <bs-tooltip-ticket label-value = '{{data.subject}} # {{data.ticketNum}}' status= '{{data.status}}' priority='{{data.priority}}' dueBy= '{{data.dueBy}}'></bs-tooltip-ticket>
+        </p>
+        <p>
+        <bs-tooltip label-value = '{{data.requestor.userName}}' name= '{{data.requestor.userName}}' email='{{data.requestor.email}}' mobile= '{{data.requestor.mobile}}'></bs-tooltip>
+        <span>{{data.createdOn | date}}</span>
+        </p>
+        </td>
+
+        <td title="'Agent'">
+        <bs-tooltip label-value = 'Agent:-{{data.agent.userName}}' name= '{{data.agent.userName}}' email='{{data.agent.email}}' mobile= '{{data.agent.mobile}}'></bs-tooltip>
+        </td>
+        <td title="'Priority'" sortable="'priority'">
+        <div class="col-xs-2" ng-class="{highBg: data.priority === 'High',mediumBg:data.priority=='Medium',lowBg:data.priority=='Low'}">{{data.priority}}</div>
+        </td>
+        <!-- <td title="'Creator'">
+        <bs-tooltip label-value = '{{data.requestor.userName}}' name= '{{data.requestor.userName}}' email='{{data.requestor.email}}' mobile= '{{data.requestor.mobile}}'></bs-tooltip>
+        </td> -->
+        <!-- <td title="'CreatedOn'" sortable="'createdOn'">
+        {{data.createdOn | date}}
+        </td> -->
+        <td title="'Status'" sortable="'status'">
+        {{data.status}}
+        </td>
+    </tr>
+</table>
+
+<!-- <table id="characters-ul" ng-table="support.ticketTable" class="table table-hover table-condensed characters-table" show-filter="true">
+    <tr ng-click="support.goToDetail(data.id)" 
+        ng-repeat="data in $data | filter:{status:(support.status=='ALL' ? data : support.status)} : true ">
+      
+       <td title="'Ticket'" filter="{subject: 'text'}" sortable="'subject'">
+        <bs-tooltip-ticket label-value = '{{data.subject}} # {{data.ticketNum}}' status= '{{data.status}}' priority='{{data.priority}}' dueBy= '{{data.dueBy}}'></bs-tooltip-ticket>
+        </td>
+        <td title="'Creator'" filter="{'requestor.userName': 'text'}" sortable="'requestor.userName'">
+        <bs-tooltip label-value = '{{data.requestor.userName}}' name= '{{data.requestor.userName}}' email='{{data.requestor.email}}' mobile= '{{data.requestor.mobile}}'></bs-tooltip>
+        </td>
+        <td title="'CreatedOn'" filter="{createdOn: 'text'}" sortable="'createdOn'">
+        {{data.createdOn | date}}
+        </td>
+        <td title="'Status'" filter="{status: 'text'}" sortable="'status'">
+        {{data.status}}
+        </td>
+    </tr>
+</table> -->

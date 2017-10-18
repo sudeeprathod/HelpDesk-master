@@ -1,0 +1,38 @@
+    <div class="col-xs-12 ticket-div">
+    <a href="#/dashboard/ticketdetail/{{data.id}}">
+    <!-- <a ui-sref=".ticket({ticketId : data.id})"> -->
+    <!-- <a ui-sref=".ticket"> -->
+        <div class="col-xs-8">
+        	<div class="col-xs-12">
+        	   
+            <bs-tooltip-ticket label-value = '{{data.subject}} # {{data.ticketNum}}' status= '{{data.status}}' priority='{{data.priority}}' dueBy= '{{data.dueBy}}'></bs-tooltip-ticket>
+            </div>
+            <div class="col-xs-12">
+        	   <bs-tooltip label-value = 'Created By:-{{data.requestor.userName}}' name= '{{data.requestor.userName}}' email='{{data.requestor.email}}' mobile= '{{data.requestor.mobile}}'></bs-tooltip>
+            </div>
+
+            <div class="col-xs-12">
+        	   Created On:-{{data.createdOn | date}}
+            </div>
+            <div class="col-xs-12">
+        	   Due By:-{{data.dueBy}}
+            </div>
+        </div>
+        
+        <div class="col-xs-4">
+        	<div class="col-xs-12">
+               <bs-tooltip label-value = 'Agent:-{{data.agent.userName}}' name= '{{data.agent.userName}}' email='{{data.agent.email}}' mobile= '{{data.agent.mobile}}'></bs-tooltip>
+            </div>
+            <div class="col-xs-12">
+        	   Status:- {{data.status}}
+            </div>
+
+            <div class="col-xs-3">
+        	   Priority:
+               </div>
+               <div class="col-xs-2" ng-class="{highBg: data.priority === 'High',mediumBg:data.priority=='Medium',lowBg:data.priority=='Low'}">{{data.priority}}</div>
+            
+
+        </div>
+    </a>
+    </div>

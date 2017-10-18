@@ -1,0 +1,32 @@
+<table id="characters-ul" ng-table="dashboard.ticketTable" class="table table-hover table-condensed characters-table" show-filter="true">
+    <tr ng-click="dashboard.goToDetail(data.id)" 
+    ng-repeat="data in $data | filter:{status:(dashboard.status=='ALL' ? data : dashboard.status)} : true | filter:{priority:(dashboard.priority=='ALL' ? data : dashboard.priority)}
+    | filter:{type:(dashboard.type=='ALL' ? data : dashboard.type)}">
+    <!--duebydate:dashboard.dueBy:data-->
+      
+       <td title="'Ticket'" filter="{ticketNum: 'text'}" sortable="'ticketNum'">
+        <bs-tooltip-ticket label-value = '{{data.subject}} # {{data.ticketNum}}' status= '{{data.status}}' priority='{{data.priority}}' dueBy= '{{data.dueBy}}'></bs-tooltip-ticket>
+        </td>
+        <td title="'Creator'" filter="{'requestor.userName': 'text'}" sortable="'requestor.userName'">
+        <bs-tooltip label-value = '{{data.requestor.userName}}' name= '{{data.requestor.userName}}' email='{{data.requestor.email}}' mobile= '{{data.requestor.mobile}}'></bs-tooltip>
+        </td>
+        <td title="'CreatedOn'" filter="{createdOn: 'text'}" sortable="'createdOn'">
+        {{data.createdOn | date}}
+        </td>
+        <td title="'DueBy'" filter="{dueBy: 'text'}" sortable="'dueBy'">
+        {{data.dueBy | date}}
+        </td>
+        <td title="'Agent'" filter="{'agent.userName': 'text'}" sortable="'agent.userName'">
+        <bs-tooltip label-value = '{{data.agent.userName}}' name= '{{data.agent.userName}}' email='{{data.agent.email}}' mobile= '{{data.agent.mobile}}'></bs-tooltip>
+        </td>
+        <td title="'Status'" filter="{status: 'text'}" sortable="'status'">
+        {{data.status}}
+        </td>
+        <td title="'Priority'" filter="{priority: 'text'}" sortable="'priority'">
+        <div class="col-xs-2" ng-class="{highBg: data.priority === 'High',mediumBg:data.priority=='Medium',lowBg:data.priority=='Low'}">{{data.priority}}</div>
+        </td>
+        <td title="'Type'" filter="{type: 'text'}" sortable="'type'">
+        {{data.type}}
+        </td>
+    </tr>
+</table>

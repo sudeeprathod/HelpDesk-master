@@ -1,0 +1,39 @@
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-3">
+    <p>hello</p>
+
+    <div class="col-xs-12" style='margin-top: 20px;'>
+        <label><b>Status:</b><select style='border-radius: 6px; width:100%' ng-model="support.status" ng-options="x for x in support.statusArr"></select></label>
+    </div>
+
+    <div class="col-xs-12" style='margin-top: 20px;'>
+        <label><b>Priority:</b><select style='border-radius: 6px; width:100%' ng-model="support.priority" ng-options="x for x in support.priorityArr"></select></label>
+    </div>
+
+    <!-- <div class="col-xs-12"  style='margin-top: 20px;'>
+        <label><b>Answered By Me:</b><select style='border-radius: 6px;width:100%' ng-model="dashboard.groupname" ng-options="x for x in dashboard.group"></select></label>
+    </div>
+
+    <div class="col-xs-12" style='margin-top: 20px;'>
+        <label><b>Followed By Me:</b><select style='border-radius: 6px; width:100%' ng-model="dashboard.name" ng-options="x for x in dashboard.allAgent"></select></label>
+    </div>
+ -->
+  </div>
+  <div class="col-xs-9">
+    <!-- <p>Open</p>
+    <div class="col-xs-12" style='margin-top: 2px;'>
+        <label><b>Detail:</b><select style='border-radius: 6px; width:100%' ng-model="dashboard.name" ng-options="x for x in dashboard.allAgent"></select></label>
+    </div> -->
+    <!-- 
+    <div class="col-xs-12" style='margin-top: 2px;'>
+        <label><b>Sort By:</b><select style='border-radius: 6px; width:100%' ng-model="dashboard.name" ng-options="x for x in dashboard.allAgent"></select></label>
+    </div> -->
+    
+    <div class="col-xs-12 all-ticket">
+    	<all-sup-tickets></all-sup-tickets>
+    </div>
+
+  </div>
+</div>
+</div>

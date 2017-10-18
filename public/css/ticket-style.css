@@ -1,0 +1,217 @@
+
+body { 
+  //font-family: 'Source Sans Pro', sans-serif!important;
+  font-family: 'Roboto Slab', serif!important;
+  font-weight : 400!important;
+  background-color : #F1F1F1!important;
+}
+h1,h2,h3 { 
+  //font-family: 'Source Sans Pro', sans-serif!important;
+  font-family: 'Roboto Slab', serif!important;
+}
+
+
+.ta-editor {
+  min-height: 300px;
+  height: auto;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+  box-shdaow : none!important;
+}
+
+.ta-toolbar .btn {
+  border-radius : 0;
+  padding : 5px;
+  min-width : 30px;
+  background-color : #fff;
+  color : #333;
+}
+[text-angular] { 
+  position : relative;
+}
+.ta-toolbar { 
+  position : absolute ;
+  top : 0;
+  right : 0;
+}
+@media all and (max-width: 699px) {
+  .ta-toolbar { position : absolute; }
+  .ta-editor { padding-top : 30px; }
+}
+
+@media all and (max-width: 250px) {
+  .ta-toolbar { display : none; }
+}
+.ta-toolbar .btn-group { 
+  margin : 0!important;
+  //box-shadow : 0 1px 3px rgba(0,0,0,0.2);
+}
+.ta-editor {
+  border :1px solid #EEE;
+  border-raidus : 3px!important;
+}
+.form-group.required .control-label:after {
+  content:"*";
+  color:red;
+}
+.ta-toolbar {
+  position: relative;
+}
+.last-separator,.separator {
+  height: 50px;
+  top: 30px;
+}
+.separator {
+  border-right: 3px ridge #eab9b9;
+  border-radius: 3px;
+  font-size: 1.5rem;
+ font-family: 'Sorts Mill Goudy', serif;
+ color: slategrey;
+font-weight: bold;
+}
+.dashboard-nav {
+  border: 1px solid #eee;
+  width:92% ;
+  margin-left: auto ;
+  margin-right: auto ;
+  height:100px;
+  box-shadow:3px 3px 5px 6px #ccc;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.dash-img {
+  height: 60px;
+  width: 60px;
+  padding: 10px;
+  border-radius: 50%;
+  /*-webkit-transition: all 2s ease;
+     -moz-transition: all 2s ease;
+      -ms-transition: all 2s ease;
+          transition: all 2s ease;*/
+}
+.left-section,.right-section {
+  border: 1px solid #eee;
+  box-shadow:3px 3px 5px 6px #ccc;
+  background-color: #fff; 
+  top:50%;
+  padding: 15px;
+}
+/*.separator img:hover {
+  width: 70px;
+  height: 70px;
+}*/
+a { color: black; } 
+/*CSS HOVER EFFECT STYLING: Start*/
+.hovicon.effect-8 {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
+    -moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
+    transition: transform ease-out 0.1s, background 0.2s;
+}
+.hovicon.effect-8:after {
+    top: 0;
+    left: 0;
+    padding: 0;
+    z-index: -1;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+.hovicon.effect-8:hover {
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-transform: scale(0.93);
+    -moz-transform: scale(0.93);
+    -ms-transform: scale(0.93);
+    transform: scale(0.93);
+    color: #00000;
+}
+.hovicon.effect-8:hover i {
+    color: #fff;
+}
+.hovicon.effect-8:hover:after {
+    -webkit-animation: sonarEffect 1.3s ease-out 75ms;
+    -moz-animation: sonarEffect 1.3s ease-out 75ms;
+    animation: sonarEffect 1.3s ease-out 75ms;
+}
+@-webkit-keyframes sonarEffect {
+    0% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.5;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+        -webkit-transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@-moz-keyframes sonarEffect {
+    0% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.5;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+        -moz-transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@keyframes sonarEffect {
+    0% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.5;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+/*CSS HOVER EFFECT STYLING: End*/
+.team-name {
+        border-top: 2px solid #e8e8e8;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+        font-size: 1em;
+        line-height: 2rem;
+        width: 90%;
+        color: black;
+        /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
+    }
+    .team-name:hover {
+        background-color: #38003c;
+        color: wheat;
+        cursor: pointer;
+    }
+
+.left-section{
+  min-height: 400px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+.activity{
+  min-height: 400px;
+  max-height: 400px;
+  overflow-y: scroll;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+.signup-div{
+  margin-top: 70px;
+}
+.main-view{
+  min-height: 700px;
+}

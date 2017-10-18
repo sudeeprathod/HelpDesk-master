@@ -1,0 +1,67 @@
+<div class="container" class="container app">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-7 col-lg-6">
+
+      <form class="form-vertical" role="form" name="registrForm" ng-submit='dashboard.createTicket()'>
+        <fieldset>
+          <legend>Create a new Ticket</legend>
+
+          <!-- <div class="form-group required">
+            <label for="input-text" class="control-label">Requester</label>
+            <input type="text" class="form-control" id="input-text" placeholder="Search a requester"
+             ng-model = "dashboard.ticketData.requestor">
+          </div> -->
+          <div class="form-group required">
+            <label for="input-money" class="control-label">Subject</label>
+            <input type="text" class="form-control mask-money" id="input-money" placeholder="Subject" ng-model = "dashboard.ticketData.subject">
+          </div>
+          <div class="form-group required">
+            <label for="input-select" class="control-label">Type</label>
+            <select class="form-control" id="input-select" ng-model = "dashboard.ticketData.type" ng-options="x for x in dashboard.types">
+            </select>
+          </div>
+          <div class="form-group required">
+            <label for="input-select" class="control-label">Status</label>
+            <select class="form-control" id="input-select" ng-model = "dashboard.ticketData.status" ng-options="x for x in dashboard.status">
+            </select>
+          </div>
+          <div class="form-group required">
+            <label for="input-select" class="control-label">Priority</label>
+            <select class="form-control" id="input-select" ng-model = "dashboard.ticketData.priority" ng-options="x for x in dashboard.priority">
+            </select>
+          </div>
+          <div class="form-group required">
+            <label for="input-select" class="control-label">Agent</label>
+            <select class="form-control" id="input-select" ng-model = "dashboard.ticketData.agent" ng-options="x for x in dashboard.allAgents">
+            </select>
+          </div>
+          <div class="form-group required">
+            <label for="input-money" class="control-label">Description</label>
+              <div text-angular="text-angular" name="htmlcontent" ng-model="dashboard.ticketData.description" 
+              ta-toolbar="[['bold','underline','italics','undo','redo', 'quote','p','pre','ul','ol', 'insertImage','insertLink','unlink']]"></div>
+          </div>
+          <form>
+             <input type="file" id="file1" name="file" multiple
+                ng-files="dashboard.getTheFiles($files)">
+          </form>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" >Save Data</button>
+            <button type="submit" class="btn btn-primary" ng-click='clear()'>Cancel</button>
+          </div>
+        </fieldset>
+      </form>
+
+      <!-- <form ng-submit="dashboard.loadFile('59cdf4ffc1c85896783cca73')">
+             <input type="file" id="file1" name="file" multiple
+                ng-files="dashboard.getTheFiles($files)">
+                <button type="submit" class="btn btn-primary" >Save Data</button>
+          </form> -->
+      
+         <!-- <a href="http://localhost:3000/ticket/files/2" download>Download</a> -->
+      <!-- {{htmlcontent}}
+      <ng-bind-html ng-bind-html={{htmlcontent}}></ng-bind-html>
+      <span ng-bind-html="myContent"></span>
+      <span ng-bind-html="check"></span>-->
+    </div>
+  </div>
+</div> 

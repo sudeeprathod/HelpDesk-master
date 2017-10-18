@@ -1,0 +1,21 @@
+<div class="dash-div">
+	
+
+<div class="container">
+  <h3>Admin View</h3>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#/dashboard/home">Home</a></li>
+    <li><a ui-sref=".newticket">Create Ticket</a></li>
+    <li><a ui-sref=".main">Main</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a ui-sref=".profile">Personal</a></li>
+        <li><a ui-sref="#">Admin</a></li>                       
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div ui-view></div>
+</div>

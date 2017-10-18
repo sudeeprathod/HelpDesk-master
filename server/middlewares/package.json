@@ -1,0 +1,17 @@
+{
+  "name": "ensemble",
+  "version": "0.0.1",
+  "private": false,
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "express": "latest",
+    "express-mailer": "^0.3.1",
+    "express-session": "^1.15.4",
+    "jade": "^1.11.0",
+    "mongoose": "latest",
+    "morgan": "^1.8.2",
+    "nodemailer": "^4.0.1"
+  }
+}

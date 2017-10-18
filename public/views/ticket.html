@@ -1,0 +1,56 @@
+
+<div class="container">
+  <h2>Horizontal form</h2>
+  <form class="form" ng-submit="main.signUp()">
+    <div class="form-group">
+      
+      <div class="col-sm-10">
+        <label><b>First Name</b><input type="text" placeholder="First Name" name="fname" ng-model="main.formData.fname" required></label>
+      </div>
+    </div>
+    <div class="form-group">
+      
+      <div class="col-sm-10">          
+         <label><b>Last Name</b><input type="text" placeholder="Last Name" name="lname" ng-model="main.formData.lname" required></label>
+      </div>
+    </div>
+    <div class="form-group">
+      
+      <div class="col-sm-10">          
+         <label><b>Email</b><input type="text" placeholder="Enter Email" name="email" ng-model="main.formData.email" required></label>
+      </div>
+    </div>
+    <div class="form-group">
+      
+      <div class="col-sm-10">          
+        <label><b>Mobile</b> <input type="text" placeholder="Mobile Number" name="mobile" ng-model="main.formData.mobile" required></label>
+      </div>
+    </div>
+    <div class="form-group">
+      
+      <div class="col-sm-10">          
+         <label><b>Password</b><input type="password" placeholder="Enter Password" name="psw" ng-model="main.formData.psw" required></label>
+      </div>
+    </div>
+    <div class="form-group">
+      
+      <div class="col-sm-10">          
+         <label><b>Retype Password</b><input type="password" placeholder="Repeat Password" name="psw-repeat" ng-model="main.formData.pswRepeat" required></label>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember"> Remember me<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+
+         <button type="cancel" class="btn btn-default">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

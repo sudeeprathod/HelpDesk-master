@@ -1,0 +1,52 @@
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-3">
+    <p>hello</p>
+
+    <!-- <div class="col-xs-12" style='margin-top: 20px;'>
+        <label><b>Assigned To:</b><select style='border-radius: 6px; width:100%' ng-model="dashboard.agent" ng-options="x for x in dashboard.allAgents"></select></label>
+    </div> -->
+
+    
+
+    <!-- <div class="col-xs-12" style='margin-top: 20px;'>
+        <label><b>Created By:</b><select style='border-radius: 6px; width:100%' ng-model="dashboard.creator" ng-options="x for x in dashboard.craetedBy"></select></label>
+    </div> -->
+
+    <div class="col-xs-12" style='margin-top: 20px;'>
+        <label><b>Due By:</b><select style='border-radius: 6px; width:100%' ng-model="dashboard.dueBy" ng-options="x for x in dashboard.dueByData"></select></label>
+    </div>
+
+    <!-- <div class="col-xs-12" style='margin-top: 20px;'>
+        <label><b>Created By:</b><select style='border-radius: 6px; width:100%' ng-model="dashboard.creator" ng-options="x for x in dashboard.craetedBy"></select></label>
+    </div> -->
+
+    <div class="col-xs-12" style='margin-top: 20px;'>
+        <label><b>Status:</b><select style='border-radius: 6px; width:100%' ng-model="dashboard.status" ng-options="x for x in dashboard.statusArr"></select></label>
+    </div>
+
+    <div class="col-xs-12" style='margin-top: 20px;'>
+        <label><b>Priority:</b><select style='border-radius: 6px; width:100%' ng-model="dashboard.priority" ng-options="x for x in dashboard.priorityArr"></select></label>
+    </div>
+
+    <div class="col-xs-12" style='margin-top: 20px;'>
+        <label><b>Type:</b><select style='border-radius: 6px; width:100%' ng-model="dashboard.type" ng-options="x for x in dashboard.typeData"></select></label>
+    </div>
+
+  </div>
+  <div class="col-xs-9">
+    <!-- <p>hello</p>
+    <div class="col-xs-12" style='margin-top: 2px;'>
+        <label><b>Detail:</b><select style='border-radius: 6px; width:100%' ng-model="dashboard.name" ng-options="x for x in dashboard.allAgent"></select></label>
+    </div>
+    <div class="col-xs-12" style='margin-top: 2px;'>
+        <label><b>Sort By:</b><select style='border-radius: 6px; width:100%' ng-model="dashboard.name" ng-options="x for x in dashboard.allAgent"></select></label>
+    </div> -->
+    
+    <div class="col-xs-12 all-ticket table-responsive">
+    	<all-tickets></all-tickets>
+    </div>
+
+  </div>
+</div>
+</div>

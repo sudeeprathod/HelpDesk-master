@@ -1,0 +1,293 @@
+<div class="container-fluid">
+    <!-- Timeline -->
+    <div class="timeline col-xs-12">
+        <!-- Comment Avatar -->
+        <div class="comment-avatar">
+            <img src="http://lorempixel.com/200/200/people">
+        </div>
+        <div class="col-xs-6 col-xs-offset-1">
+            <!-- Panel -->
+            <article class="panel panel-default">
+                <!-- Heading -->
+                <div class="panel-heading">
+                    <h2 class="panel-title">{{detailCntrl.ticket}}</h2>
+                     <span style="float: right;" ng-click="detailCntrl.deleteTicket(detailCntrl.ticketId)"><small>Delete</small></span>
+                    <p style="margin-top: 15px;">
+                    <bs-tooltip label-value = '{{detailCntrl.name}}' name= '{{detailCntrl.name}}' email='{{detailCntrl.email}}' mobile= '{{detailCntrl.mobile}}'></bs-tooltip> <span>Posted On:{{detailCntrl.created | date}}</span>
+                    </p>
+
+                </div>
+                <!-- /Heading -->
+                <!-- Body -->
+                <div class="panel-body">
+                      <small>{{detailCntrl.description}}</small>  
+                </div>
+                <!-- /Body -->
+                <!-- Footer -->
+                <div class="panel-footer">
+                    <div ng-repeat="data in detailCntrl.attchment track by $index">
+                      <a href="/ticket/files/{{data.filename}}" download>{{data.originalname}}</a>
+                    </div>
+                </div>
+                <!-- /Footer -->
+            </article>
+            <!-- /Panel -->
+            <br>
+            <div class="btn-grp">
+                <button class="col-xs-2 btn btn-primary" ng-click='detailCntrl.sendReply()'>Reply</button>
+                <button class="col-xs-3 col-xs-offset-1 btn btn-primary" ng-click='detailCntrl.discussionChat2()'>Discuss</button>
+                <button class="col-xs-3 col-xs-offset-1 btn btn-primary" ng-click='detailCntrl.activityDtl()'>Activity</button>
+                 
+            </div>
+
+            <br>
+
+            <form class="form-vertical" role="form" name="registrForm" >
+            <div class="comment-avatar" ng-show='detailCntrl.showReplyPanel' style="margin-left: -12%;">
+                <img src="http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80">
+            </div>
+            <div ng-show='detailCntrl.showReplyPanel' class="panel panel-default">
+                <!-- Heading -->
+                <div class="panel-heading">
+                    <h2 class="panel-title">Reply from 'Sender Name'</h2>
+                </div>
+                <!-- /Heading -->
+                <!-- Body -->
+                <div class="panel-body">
+                    <div class="email-reciever">
+                        To: 'Reciever Email'
+                    </div>
+                    <br>
+                    <div text-angular="text-angular" name="htmlcontent" ng-model="detailCntrl.notes.text" ta-toolbar="[['bold','underline','italics','undo','redo', 'quote','p','pre','ul','ol', 'insertImage','insertLink','unlink']]"></div>
+                    <div class="footer-btn">
+                        <button class="col-xs-2 col-xs-offset-6 btn btn-primary" type="submit" ng-click="detailCntrl.addComment()">Send</button>
+                        <button class="col-xs-3 col-xs-offset-1 btn btn-primary"  type="cancel"
+                        ng-click='detailCntrl.cancelReply()'>Cancel</button> 
+                    </div>
+                </div>
+                <!-- /Body -->
+                 <form class="form-vertical" role="form" name="registrForm">
+                     <input type="file" id="file1" name="file" multiple
+                        ng-files="detailCntrl.getTheFiles($files)">
+                        
+                  </form> 
+                  <br>
+            </div>
+
+            </form>
+
+            <!-- Comments List -->
+            <br>
+            
+            <div class="comments">
+                <!-- Comment -->
+                <div class="comment" ng-repeat="comment in detailCntrl.comments track by $index">
+                    <!-- Comment Avatar -->
+                    <div class="comment-avatar">
+                        <img ng-src="">
+                    </div>
+                    <!-- Comment Box -->
+                    <div class="comment-box">
+                        <div class="comment-text" ng-bind-html='comment.notes'>{{comment.notes }}</div>
+                        <div class="comment-footer">
+                            <div class="comment-info">
+                                <span class="comment-author">
+            <bs-tooltip label-value = '{{comment.userName}}' name= '{{comment.userName}}' email='{{comment.email}}' mobile= '{{comment.mobile}}'></bs-tooltip> <span>Replied On:{{comment.createdon | date}}</span>
+          </span>
+                               <span style="float: right;" ng-click="detailCntrl.deleteReply(comment.replyId)">Delete</span>
+                            </div>
+                            <div class="comment-actions">
+                                <div ng-repeat="data in detailCntrl.comntAtt track by $index">
+                                  <a href="/ticket/files/{{data.filename}}" download>{{data.originalname}}</a>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Comment - Dummy -->
+                 <div class="comment" ng-hide="true">
+                    
+                    <div class="comment-avatar" style="margin-left: 1%;">
+                        <img src="http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80">
+                    </div>
+                    
+                    <div class="comment-box">
+                        <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus iste nostrum dolorem natus recusandae incidunt voluptatum.</div>
+                        <div class="comment-footer">
+                            <div class="comment-info">
+                                <span class="comment-author">
+            <a href="mailto:sexar@pagelab.io">Sexar</a>
+          </span>
+                                <span class="comment-date">Feb 2, 2013 11:32:04 PM</span>
+                            </div>
+                            <div class="comment-actions">
+                                <a href="#/home">Reply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            
+            
+        </div>
+        <div class="col-xs-4">
+                 <button class="col-xs-8 btn btn-primary" ng-click='detailCntrl.customerChat()'>Customer</button>
+        </div>
+        <br>
+        <div class="col-xs-4" style="padding: 10px 15px;" ng-show="detailCntrl.showStatus">
+            <div class='ticket-status'>
+                <div><b>Status:-</b>{{detailCntrl.status}}</div>
+                <div><b>Priority:-</b>{{detailCntrl.priority}}</div>
+                <div><b>Due By:-</b>{{detailCntrl.due | date}}
+                    <span class="">
+                
+              <a href="" class="" data-toggle="modal" data-target="#smallModal">Change</a>
+            </span>
+                </div>
+            </div>
+            <div class="">
+                <section class="ac-container">
+                    <div>
+                        <input id="ac-1" name="accordion-1" type="checkbox" />
+                        <label class='panel-label' for="ac-1">Requester Info</label>
+                        <article class="ac-small">
+                            <p><i class="fa fa-user tooltip-icon" aria-hidden="true"></i>{{detailCntrl.name}}</p>
+                            <p><i class="fa fa-envelope tooltip-icon" aria-hidden="true"></i>{{detailCntrl.email}}</p>
+                            <p><i class="fa fa-phone tooltip-icon" aria-hidden="true"></i></i>{{detailCntrl.mobile}}</p>
+                    </div>
+                    <div>
+                        <input id="ac-2" name="accordion-1" type="checkbox" />
+                        <label class='panel-label' for="ac-2">Ticket Details</label>
+                        <article class="ac-medium">
+                            <form ng-submit='detailCntrl.updateTicket()'>
+                                <div class="col-xs-12">
+                                    <div class="form-group required col-xs-6">
+                                        <label for="input-select" class="control-label panel-form-label">Type</label>
+                                        <select class="form-control" id="input-select" 
+                                                 ng-model = "detailCntrl.type" 
+                                                 ng-options="x for x in detailCntrl.typesData">
+                                         </select>
+                                    </div>
+                                    <div class="form-group required col-xs-6">
+                                        <label for="input-select" class="control-label panel-form-label">Status</label>
+                                        <select class="form-control" id="input-select" 
+                                                ng-model = "detailCntrl.status" 
+                                                ng-options="x for x in detailCntrl.statusData">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group required col-xs-6">
+                                        <label for="input-select" class="control-label panel-form-label">Priority</label>
+                                        <select class="form-control" id="input-select" 
+                                                ng-model = "detailCntrl.priority" 
+                                                ng-options="x for x in detailCntrl.priorityData">
+                                        </select>
+                                    </div>
+                                    <div class="form-group required col-xs-6">
+                                        <label for="input-select" class="control-label panel-form-label">Agent</label>
+                                        <select class="form-control" id="input-select" 
+                                                ng-model = "detailCntrl.agent" 
+                                                ng-options="x for x in detailCntrl.agentData">
+                                        </select>
+                                    </div>
+                                    <!-- <div class="form-group required col-xs-6">
+                                        <label for="input-select" class="control-label  panel-form-label">Agent</label>
+                                        <select class="form-control" id="input-select" 
+                                                ng-model = "detailCntrl.agent" 
+                                                ng-options="x for x in detailCntrl.priorityData">
+                                        </select>
+                                        <select class="form-control" id="input-select" ng-model = "detailCntrl.agent"
+                                                ng-options="x for x in detailCntrl.priorityData"> 
+                                        </select> 
+                                        {{detailCntrl.agent}}
+                                    </div> -->
+                                </div>
+                                <button type="submit" class="btn btn-default col-xs-offset-4" style="margin-bottom: 5px;">Submit</button>
+                            </form>
+                        </article>
+                    </div>
+                    <div>
+                        <input id="ac-3" name="accordion-1" type="checkbox" />
+                        <label class='panel-label' for="ac-3">Time Tracked</label>
+                        <article class="ac-large">
+                            <p>You think water moves fast? You should see ice.Nature is lethal but it doesn't hold a candle to man. </p>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="col-xs-4" ng-show="detailCntrl.showAcitvity">
+                <div class="col-xs-12 left-section" > Recent Ticket Activity
+
+                  <div ng-repeat="data in detailCntrl.allAcivityData">
+                    <div class="team-name row"> 
+                        <div class="col-xs-12 col-sm-12 team1" id="team1-details">
+                          <p><bs-tooltip label-value = '{{data.creator.userName}} ' name= '{{data.creator.userName}}' email='{{data.creator.email}} ' mobile= '{{data.creator.mobile}} '>
+                            <span>{{data.notes}} {{data.ticket.subject}} # {{data.ticket.ticketnum}}</span>
+                          </bs-tooltip>
+                             
+                          </p>
+                          <p>{{data.createdon | date}}</p>
+                        </div>
+                    </div>
+                  </div>            
+                </div>
+       </div>
+
+        <div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content date-change">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Change Due Date?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <label>Select Date: </label>
+                        <div id="datepicker" class="input-group- date" data-date-format="mm-dd-yyyy">
+                            <input class="form-control" type="text" readonly />
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-4" ng-show="detailCntrl.showChat">
+                <div class="col-xs-12 left-section"> Chat With Agent
+                    <div class="row"> 
+                        <div class="col-xs-12 col-sm-12" id="">
+                          <div class="well">
+
+                            <div id="chat-div">
+
+                              <ul class="list-group" id="old-messages"></ul>
+                              <ul id="messages" ng-repeat="comment in detailCntrl.message track by $index">
+
+                                  <li class="list-group-item list-group-item-info">
+                                      {{comment}}
+                                  </li>
+
+                              </ul>
+                              <form ng-submit="detailCntrl.chatSub()">
+                                <input id="m" class="form-control" autocomplete="off" ng-model="detailCntrl.chatMsg"/>
+                              </form>
+                              <ul id="typing-status"></ul>
+                            </div>
+                          </div>
+                        </div>
+                    </div>         
+                </div>
+       </div>
+
+
+    </div>
+</div>

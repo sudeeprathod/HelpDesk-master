@@ -1,0 +1,31 @@
+<div style="" class="dashboard-nav">
+  <a href=""><div class="col-xs-2 separator hovicon effect-8"><img class='image-responsive col-xs-1 dash-img' src="./images/Unresolved-img.jpg" style="">{{main.open}}<p class="">Unresolved</p></div></a>
+ <a href=""><div class="col-xs-2 separator hovicon effect-8"><img class='image-responsive col-xs-1 dash-img' src="./images/overdue-img.jpg" style="">{{main.overdue}}<p class="">Overdue</p></div></a>
+<a href=""><div class="col-xs-2 separator hovicon effect-8"><img class='image-responsive col-xs-1 dash-img' src="./images/due-img.jpg" style="">{{main.duetoday}}<p class="">Due Today</p></div></a>
+<a href=""><div class="col-xs-2 separator hovicon effect-8"><img class='image-responsive col-xs-1 dash-img' src="./images/open-img.jpg" style="">{{main.critical}}<p class="">Critical</p></div></a>
+<a href=""><div class="col-xs-2 separator hovicon effect-8"><img class='image-responsive col-xs-1 dash-img' src="./images/hold-img.jpg" style="">{{main.pending}}<p class="">On Hold</p></div></a>
+<a href=""><div class="col-xs-2 last-separator hovicon effect-8"><img class='image-responsive col-xs-1 dash-img' src="./images/unassigned-img.png" style="">{{main.unassigned}}<p class="">Unassigned</p></div></a>
+
+<div class="col-xs-8 left-section" > Recent Helpdesk Activity
+
+  <div ng-repeat="data in main.allAcivityData">
+    <div class="team-name row"> 
+        <div class="col-xs-8 col-sm-8 team1" id="team1-details">
+          <p><bs-tooltip label-value = '{{data.creator.userName}} ' name= '{{data.creator.userName}}' email='{{data.creator.email}} ' mobile= '{{data.creator.mobile}} '>
+            <span>{{data.notes}} {{data.ticket.subject}} # {{data.ticket.ticketnum}}</span>
+          </bs-tooltip>
+             
+          </p>
+          <p>{{data.createdon | date}}</p>
+        </div>
+    </div>
+    <!-- <div class="team-name row">
+        <div class="col-xs-5 col-sm-5 team1" id="team1-details">{{matchDay.team1.name}} </div>
+    </div>
+    <div class="team-name row">
+        <div class="col-xs-5 col-sm-5 team1" id="team1-details">{{matchDay.team1.name}} </div>
+    </div> -->
+  </div>
+</div>
+<div class="col-xs-3 col-xs-offset-1 right-section">I am right</div>
+</div>

@@ -1,0 +1,68 @@
+<div class="container app signup-div">
+
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-7 col-lg-6">
+
+  <form class="form-vertical" role="form" name="registrForm" ng-submit="main.login()">
+     <fieldset>
+          <legend>Login</legend>
+            <div class="form-group required">
+                  <label for="input-money" class="control-label">Email</label>
+                  <input type="email" class="form-control mask-money" placeholder="Enter Email" name="email" ng-model="main.loginData.email" required>
+            </div>
+            <div class="form-group required">
+                  <label for="input-money" class="control-label">Password</label>
+                  <input type="password" class="form-control mask-money" placeholder="Enter Password" name="psw" ng-model="main.loginData.psw" required>
+            </div>
+            <div class="form-group" >
+           
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button type="cancel" class="btn btn-default">Cancel</button>
+            </div>
+    </fieldset>
+
+  </form>
+  </div>
+</div>
+</div>
+
+<!-- <div class="container">
+  <h2>Horizontal form</h2>
+  <form class="form" ng-submit="main.login()">
+    
+    
+    <div class="form-group">
+      
+      <div class="col-sm-10">          
+         <label><b>Email</b><input type="text" placeholder="Enter Email" name="email" ng-model="main.loginData.email" required></label>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      
+      <div class="col-sm-10">          
+         <label><b>Password</b><input type="password" placeholder="Enter Password" name="psw" ng-model="main.loginData.psw" required></label>
+      </div>
+    </div>
+    
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember"> Remember me<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p></label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+
+         <button type="cancel" class="btn btn-default">Cancel</button>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="message" ng-show="main.loginFail">{{main.loginFailMsg}}</div>
+      </div>
+    </div>
+  </form>
+</div> -->

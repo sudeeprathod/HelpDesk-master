@@ -1,0 +1,66 @@
+
+<div class="container app signup-div">
+
+<div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-7 col-lg-6">
+
+  <form class="form-vertical" role="form" name="registrForm" ng-submit="main.signupAdmin()">
+     <fieldset>
+          <legend>Sign Up As Admin</legend>
+      <div class="form-group required">
+            <label for="input-money" class="control-label">First Name</label>
+            <input type="text" class="form-control mask-money" placeholder="First Name" name="fname" ng-model="main.adminData.fname" required>
+            <span ng-show="registrForm.fname.$touched && registrForm.fname.$invalid">First Name is required.</span>
+      </div>
+      <div class="form-group required">
+            <label for="input-money" class="control-label">Last Name</label>
+            <input type="text" class="form-control mask-money" placeholder="Last Name" name="lname" ng-model="main.adminData.lname" required>
+            <span ng-show="registrForm.lname.$touched && registrForm.lname.$invalid">Last Name is required.</span>
+      </div>
+      <div class="form-group required">
+            <label for="input-money" class="control-label">Email</label>
+            <input type="email" class="form-control mask-money" placeholder="Enter Email" name="email" ng-model="main.adminData.email" ng-blur="main.checkEmail()" ng-focus="main.clearEmailSpan()" required>
+            <span ng-show="registrForm.email.$touched && registrForm.email.$invalid">Email is invalid.</span>
+            <span ng-show="main.dupemail">Email is already resgistered.</span>
+      </div>
+      <div class="form-group required">
+            <label for="input-money" class="control-label">User Name</label>
+            <input type="email" class="form-control mask-money" placeholder="User Name" name="username" ng-model="main.formData.username" ng-blur="main.checkUser()" ng-focus="main.clearUserSpan()" required>
+            <span ng-show="main.dupemail">User Name already taken.</span>
+      </div>
+      <div class="form-group required">
+            <label for="input-money" class="control-label">Mobile</label>
+            <input type="text" class="form-control mask-money" placeholder="Mobile Number" name="mobile" ng-model="main.adminData.mobile" ng-blur="main.checkMobile()" ng-focus="main.clearMobileSpan()" required>
+            <span ng-show="registrForm.mobile.$touched && registrForm.mobile.$invalid">Mobile Number is required.</span>
+            <span ng-show="main.dupmobile">Mobile is already resgistered.</span>
+      </div>
+      <div class="form-group required">
+            <label for="input-money" class="control-label">Password</label>
+            <input type="password" class="form-control mask-money" placeholder="Enter Password" name="psw" ng-model="main.adminData.psw" required>
+      </div>
+      <div class="form-group required">
+            <label for="input-money" class="control-label">Retype Password</label>
+            <input type="password" class="form-control mask-money" placeholder="Repeat Password" name="psw-repeat" ng-model="main.adminData.pswRepeat" required>
+      </div>
+      <div class="form-group required">
+            <label for="input-money" class="control-label">Admin Key:</label>
+            <input type="password" class="form-control mask-money" placeholder="Admin Key" name="admin" ng-model="main.adminData.admin" required>
+      </div>
+      <div class="form-group required">
+           
+            <input type="checkbox"  name="remember">By creating an account you agree to our <a href="#">Terms & Privacy</a>
+            <span ng-show="registrForm.email.$untouched">Please Agree to Policy.</span>
+            
+            
+      </div>
+      <div class="form-group" >
+           
+            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="cancel" class="btn btn-default">Cancel</button>
+      </div>
+    </fieldset>
+  </form>
+  </div>
+
+  </div>
+</div>

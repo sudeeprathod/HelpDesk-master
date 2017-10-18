@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="col-md-12">
+            
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="http://placehold.it/210x210" class="img-rounded" alt="Cinque Terre" width="210" height="210">    
+                    </div>
+                </div>
+                
+        
+        </div>
+        <br>
+        
+            <div class="col-md-12">
+                <ul class="nav nav-tabs nav_tabs">
+                    <li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a>
+                     <p>123123123</p>
+                     <p>123123123</p>
+                     <p>123123123</p>
+                    </li>
+                    <li><a href="#service-two" data-toggle="tab">SPECFICATION</a>
+                    <p>45645646</p>
+                    <p>123123123</p>
+                    <p>123123123</p>
+                    <p>123123123</p>
+                    <p>123123123</p>
+                    </li>
+                </ul>
+            </div>
+      </div>
+        
+        <div class="col-md-8"><!--ng-show="main.showAcitvity"-->
+                <div class="col-xs-12 left-section" > Recent Activity
+
+                  <div ng-repeat="data in main.allUserAcitvity">
+                    <div class="team-name row"> 
+                        <div class="col-xs-12 col-sm-12 team1" id="team1-details">
+                          <p><bs-tooltip label-value = '{{data.creator.userName}} ' name= '{{data.creator.userName}}' email='{{data.creator.email}} ' mobile= '{{data.creator.mobile}} '>
+                            <span>{{data.notes}} {{data.ticket.subject}} # {{data.ticket.ticketnum}}</span>
+                          </bs-tooltip>
+                             
+                          </p>
+                          <p>{{data.createdon | date}}</p>
+                        </div>
+                    </div>
+                  </div>            
+                </div>
+       </div>
+    </div>
+
+    
+</div>
